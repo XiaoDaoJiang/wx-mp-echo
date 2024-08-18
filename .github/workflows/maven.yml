@@ -32,7 +32,7 @@ jobs:
       run: |
         mvn spring-boot:build-image \
          -Dmaven.test.skip=true \
-         -Ddocker.publishRegistry.username=${{docker_username}} \
+         -Ddocker.publishRegistry.username=${docker_username} \
          -Ddocker.publishRegistry.password=${docker_password} \
          -Ddocker.publishRegistry.url=registry.cn-shenzhen.aliyuncs.com \
          -Dspring-boot.build-image.publish=true \
