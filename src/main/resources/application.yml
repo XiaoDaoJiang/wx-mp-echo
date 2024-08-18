@@ -1,0 +1,26 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: conchEcho
+#  devtools:
+#    # idea Java程序的启动方式会影响到是否启用
+#    # 开发人员工具在运行完全打包的应用程序时会自动禁用。如果应用程序是从特殊类装入器启动 java -jar 的，或者是从特殊类装入器启动的，则将其视为“生产应用程序”。
+#    # 可以使用 spring.devtools.restart.enabled system 属性来控制此行为。
+#    # 若要启用 devtools，无论用于启动应用程序的类装入器如何，请设置 -Dspring.devtools.restart.enabled=true system 属性。在运行 devtools 存在安全风险的生产环境中，不得执行此操作。若要禁用 devtools，请排除依赖项或设置 -Dspring.devtools.restart.enabled=false system 属性。
+#    # https://docs.spring.io/spring-boot/docs/2.7.18/reference/html/using.html#using.devtools
+#    restart:
+#      enabled: true
+##      poll-interval: "2s"
+##      quiet-period: "1s"
+##      trigger-file: ".reloadtrigger"
+#    livereload:
+#      enabled: false
+#    remote:
+#      secret: 123
+
+instapaper:
+  basic:
+    username: ${INSTAPAPER_USERNAME}
+    password: ${INSTAPAPER_PASSWORD}
