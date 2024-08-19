@@ -44,7 +44,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        # working-directory: ./scripts
+        working-directory: ~/wx-mp-echo
     steps:
       - name: Deploy to server
         run: |
