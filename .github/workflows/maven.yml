@@ -45,4 +45,7 @@ jobs:
       - name: Deploy to server
         run: |
           cd ~/${{ vars.PROJECT_NAME }}
+          pwd
+          whoami
+          groups
           ./restart.sh
