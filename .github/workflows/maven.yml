@@ -34,9 +34,9 @@ jobs:
          -Dmaven.test.skip=true \
          -Ddocker.publishRegistry.username=${docker_username} \
          -Ddocker.publishRegistry.password=${docker_password} \
-         -Ddocker.publishRegistry.url=${{vars.DOCKER_REGISTRY_URL}} \
+         -Ddocker.publishRegistry.url=${{ vars.DOCKER_REGISTRY_URL }} \
          -Dspring-boot.build-image.publish=true \
-         -Dspring-boot.build-image.imageName=${{ vars.DOCKER_REGISTRY_URL }}/${{vars.DOCKER_REGISTRY_NAMESPACE}}/${{vars.PROJECT_NAME}}
+         -Dspring-boot.build-image.imageName=${{ vars.DOCKER_REGISTRY_URL }}/${{ vars.DOCKER_REGISTRY_NAMESPACE }}/${{ vars.PROJECT_NAME }}
   
   deploy:
     runs-on: [self-hosted]
@@ -44,7 +44,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ~/${{vars.PROJECT_NAME}}
+        working-directory: ~/${{ vars.PROJECT_NAME }}
     steps:
       - name: Deploy to server
         run: |
