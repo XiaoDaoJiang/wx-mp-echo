@@ -34,9 +34,9 @@ jobs:
          -Dmaven.test.skip=true \
          -Ddocker.publishRegistry.username=${docker_username} \
          -Ddocker.publishRegistry.password=${docker_password} \
-         -Ddocker.publishRegistry.url=registry.cn-shenzhen.aliyuncs.com \
+         -Ddocker.publishRegistry.url=${DOCKER_REGISTRY_URL} \
          -Dspring-boot.build-image.publish=true \
-         -Dspring-boot.build-image.imageName=registry.cn-shenzhen.aliyuncs.com/xiaodaojiang-dev/wx-mp-echo
+         -Dspring-boot.build-image.imageName=${DOCKER_REGISTRY_URL}/${DOCKER_REGISTRY_NAMESPACE}/${PROJECT_NAME}
   
   deploy:
     runs-on: [self-hosted]
@@ -44,7 +44,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ~/wx-mp-echo
+        working-directory: ~/${PROJECT_NAME}
     steps:
       - name: Deploy to server
         run: |
