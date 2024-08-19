@@ -41,13 +41,8 @@ jobs:
   deploy:
     runs-on: [self-hosted]
     needs: build
-    defaults:
-      run:
-        shell: bash
-        working-directory: $HOME/${{ vars.PROJECT_NAME }}
     steps:
       - name: Deploy to server
         run: |
-          pwd
-      
-    
+          cd ~/${{ vars.PROJECT_NAME }}
+          ./restart.sh
