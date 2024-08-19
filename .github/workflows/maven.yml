@@ -44,7 +44,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ~/${{ vars.PROJECT_NAME }}
+        working-directory: $HOME/${{ vars.PROJECT_NAME }}
     steps:
       - name: Deploy to server
         run: |
