@@ -41,7 +41,7 @@ public class MsgHandler extends AbstractHandler {
         }
 
         // TODO 组装回复消息
-        String response = "收到信息内容：" + JSONUtil.toJsonPrettyStr(wxMessage);
+        String response = "🐶收到信息内容：" + JSONUtil.toJsonPrettyStr(wxMessage);
 
         return new TextBuilder().build(response, wxMessage, weixinService);
 
