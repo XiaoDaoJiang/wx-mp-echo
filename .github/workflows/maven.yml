@@ -28,7 +28,7 @@ jobs:
     - name: Build and push Docker image
       env:
         docker_username: ${{ secrets.DOCKER_USERNAME }}
-        docker_password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+        docker_password: ${{ secrets.DOCKER_PASSWORD }}
       run: |
         mvn spring-boot:build-image \
          -Dmaven.test.skip=true \
@@ -37,3 +37,17 @@ jobs:
          -Ddocker.publishRegistry.url=registry.cn-shenzhen.aliyuncs.com \
          -Dspring-boot.build-image.publish=true \
          -Dspring-boot.build-image.imageName=registry.cn-shenzhen.aliyuncs.com/xiaodaojiang-dev/wx-mp-echo
+  
+  deploy:
+    runs-on: [self-hosted]
+    needs: build
+    defaults:
+      run:
+        shell: bash
+        # working-directory: ./scripts
+    steps:
+      - name: Deploy to server
+        run: |
+          pwd
+      
+    
